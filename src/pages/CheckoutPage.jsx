@@ -4,7 +4,7 @@ import { CartContext } from '../context/CartContext';
 import { AuthContext } from '../context/AuthContext';
 import LoginModal from '../components/LoginModal';
 import API from '../api';
-import { ShieldCheck, Lock, CreditCard, CheckCircle, Tag, Pencil, Store, Truck } from 'lucide-react';
+import { ShieldCheck, Lock, CreditCard, CheckCircle, Tag, Pencil, Store, Truck, AlertTriangle, Phone } from 'lucide-react';
 
 const STORE_PICKUP_DETAILS = {
     name: 'Sri Vinayaka Collections',
@@ -338,6 +338,8 @@ const CheckoutPage = () => {
 
     const handleSubmit = async (e) => {
         if (e) e.preventDefault();
+        alert('We are currently not proceeding with orders and deliveries at this time. We apologize for the inconvenience. For any inquiries, please contact support at +91 9392239145.');
+        return;
 
         if (!user) {
             setIsLoginModalOpen(true);
@@ -447,6 +449,36 @@ const CheckoutPage = () => {
                     Secure Checkout
                     <span className="text-xs font-sans font-bold text-gray-400 uppercase tracking-widest text-[#999]">Safe & Secure Payment</span>
                 </h1>
+
+                {/* Delivery Notice Banner */}
+                <div className="mb-8 rounded-3xl border-2 border-amber-300 bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 p-6 md:p-8 shadow-sm">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                        <div className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-300 flex items-center justify-center flex-shrink-0 text-amber-900">
+                            <AlertTriangle size={28} />
+                        </div>
+                        <div className="flex-1">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-200/70 text-amber-950 text-[10px] font-black uppercase tracking-wider mb-2">
+                                <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
+                                Delivery Notice
+                            </div>
+                            <h2 className="text-xl font-bold text-gray-900 mb-1">
+                                We Are Currently Not Delivering Orders
+                            </h2>
+                            <p className="text-sm text-gray-700 leading-relaxed max-w-3xl">
+                                We are currently not proceeding with new deliveries or order processing at this time. We apologize for the inconvenience and appreciate your patience. For store visits, offline purchases, or urgent support, please reach out directly.
+                            </p>
+                        </div>
+                        <a
+                            href="https://wa.me/919392239145?text=Hi%2C%20I%20have%20an%20inquiry%20regarding%20orders%20at%20Sri%20Vinayaka%20Collections"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider transition shadow-sm hover:shadow self-stretch sm:self-auto justify-center"
+                        >
+                            <Phone size={14} />
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
 
                 <div className="flex flex-col lg:flex-row gap-8 items-start">
                     {/* Left Column: Forms */}
@@ -874,12 +906,23 @@ const CheckoutPage = () => {
                             </div>
                         </section>
 
+                        {/* Notice above checkout button */}
+                        <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-center">
+                            <p className="text-xs font-bold text-amber-950 uppercase tracking-wider mb-1 flex items-center justify-center gap-1.5">
+                                <AlertTriangle size={14} className="text-amber-800" />
+                                Orders & Deliveries Currently Paused
+                            </p>
+                            <p className="text-xs text-gray-600">
+                                We are temporarily not proceeding with new orders or deliveries.
+                            </p>
+                        </div>
+
                         <button
                             onClick={handleSubmit}
-                            disabled={loading}
-                            className="w-full bg-amber-900 hover:bg-black text-white font-black uppercase tracking-[0.2em] text-[10px] py-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 disabled:opacity-50"
+                            disabled={true}
+                            className="w-full bg-gray-300 text-gray-500 font-black uppercase tracking-[0.2em] text-[10px] py-6 rounded-3xl shadow-none cursor-not-allowed transition-all opacity-85"
                         >
-                            {loading ? 'Processing Ritual...' : 'Complete Purchase'}
+                            Orders Currently Paused
                         </button>
                     </div>
 

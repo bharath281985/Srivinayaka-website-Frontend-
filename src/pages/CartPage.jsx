@@ -115,6 +115,15 @@ const CartPage = () => {
                                     Rs.{cartTotal.toLocaleString('en-IN')}
                                 </span>
                             </div>
+                            {/* Notice regarding suspended deliveries */}
+                            <div className="mb-4 p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-center">
+                                <p className="text-xs font-bold text-amber-950 uppercase tracking-wider mb-1">
+                                    ⚠️ Delivery Notice
+                                </p>
+                                <p className="text-xs text-amber-800">
+                                    We are currently not proceeding with new orders and deliveries at this time.
+                                </p>
+                            </div>
 
                             <button
                                 onClick={() => {
