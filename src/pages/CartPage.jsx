@@ -115,13 +115,13 @@ const CartPage = () => {
                                     Rs.{cartTotal.toLocaleString('en-IN')}
                                 </span>
                             </div>
-                            {/* Notice regarding suspended deliveries */}
-                            <div className="mb-4 p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-center">
-                                <p className="text-xs font-bold text-amber-950 uppercase tracking-wider mb-1">
-                                    ⚠️ Delivery Notice
+                            {/* Notice regarding new branch transition */}
+                            <div className="mb-4 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-center">
+                                <p className="text-xs font-bold text-amber-950 uppercase tracking-wider mb-1 flex items-center justify-center gap-1.5">
+                                    🎉 We’ll Be Back Soon!
                                 </p>
-                                <p className="text-xs text-amber-800">
-                                    We are currently not proceeding with new orders and deliveries at this time.
+                                <p className="text-xs text-amber-900 leading-relaxed font-medium">
+                                    We’re currently preparing our new branch to serve you better. Orders are temporarily paused during this transition.
                                 </p>
                             </div>
 

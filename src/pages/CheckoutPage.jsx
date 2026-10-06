@@ -450,22 +450,22 @@ const CheckoutPage = () => {
                     <span className="text-xs font-sans font-bold text-gray-400 uppercase tracking-widest text-[#999]">Safe & Secure Payment</span>
                 </h1>
 
-                {/* Delivery Notice Banner */}
+                {/* Branch Notice Banner */}
                 <div className="mb-8 rounded-3xl border-2 border-amber-300 bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 p-6 md:p-8 shadow-sm">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-                        <div className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-300 flex items-center justify-center flex-shrink-0 text-amber-900">
-                            <AlertTriangle size={28} />
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-5">
+                        <div className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-300 flex items-center justify-center flex-shrink-0 text-amber-900 text-3xl">
+                            🎉
                         </div>
                         <div className="flex-1">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-200/70 text-amber-950 text-[10px] font-black uppercase tracking-wider mb-2">
                                 <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
-                                Delivery Notice
+                                New Branch Announcement
                             </div>
-                            <h2 className="text-xl font-bold text-gray-900 mb-1">
-                                We Are Currently Not Delivering Orders
+                            <h2 className="text-xl md:text-2xl font-serif font-black text-gray-900 mb-1">
+                                We’ll Be Back Soon! 🎉
                             </h2>
-                            <p className="text-sm text-gray-700 leading-relaxed max-w-3xl">
-                                We are currently not proceeding with new deliveries or order processing at this time. We apologize for the inconvenience and appreciate your patience. For store visits, offline purchases, or urgent support, please reach out directly.
+                            <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl">
+                                We’re currently preparing our new branch to serve you better. Orders are temporarily paused during this transition. We truly appreciate your patience and understanding, and we look forward to serving you soon!
                             </p>
                         </div>
                         <a
@@ -477,6 +477,22 @@ const CheckoutPage = () => {
                             <Phone size={14} />
                             Contact Support
                         </a>
+                    </div>
+
+                    {/* Regional Languages */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-amber-200/60">
+                        <div className="p-4 rounded-2xl bg-white/70 border border-amber-200/60">
+                            <h3 className="text-sm font-bold text-gray-900 mb-1">మేము త్వరలోనే తిరిగి వస్తాము! 🎉</h3>
+                            <p className="text-xs text-gray-600 leading-relaxed">
+                                మీకు మరింత మెరుగైన సేవలను అందించేందుకు మా కొత్త బ్రాంచ్ను ప్రస్తుతం సిద్ధం చేస్తున్నాము. ఈ మార్పుల కారణంగా ఆర్డర్లను తాత్కాలికంగా నిలిపివేశాము. మీ సహనం మరియు అవగాహనకు మనస్పూర్తిగా ధన్యవాదాలు. త్వరలోనే మళ్లీ మీకు సేవలందించేందుకు ఎదురుచూస్తున్నాము!
+                            </p>
+                        </div>
+                        <div className="p-4 rounded-2xl bg-white/70 border border-amber-200/60">
+                            <h3 className="text-sm font-bold text-gray-900 mb-1">हम जल्द ही वापस आएंगे! 🎉</h3>
+                            <p className="text-xs text-gray-600 leading-relaxed">
+                                आपको और बेहतर सेवा देने के लिए हम अपनी नई ब्रांच की तैयारी कर रहे हैं। इस बदलाव के दौरान ऑर्डर फिलहाल अस्थायी रूप से रोक दिए गए हैं। आपके धैर्य और समझ के लिए हम आपका दिल से धन्यवाद करते हैं। हम जल्द ही दोबारा आपकी सेवा करने के लिए उत्सुक हैं!
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -909,11 +925,10 @@ const CheckoutPage = () => {
                         {/* Notice above checkout button */}
                         <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-center">
                             <p className="text-xs font-bold text-amber-950 uppercase tracking-wider mb-1 flex items-center justify-center gap-1.5">
-                                <AlertTriangle size={14} className="text-amber-800" />
-                                Orders & Deliveries Currently Paused
+                                🎉 We’ll Be Back Soon!
                             </p>
                             <p className="text-xs text-gray-600">
-                                We are temporarily not proceeding with new orders or deliveries.
+                                Preparing our new branch. Orders are temporarily paused during this transition.
                             </p>
                         </div>
 
@@ -922,7 +937,7 @@ const CheckoutPage = () => {
                             disabled={true}
                             className="w-full bg-gray-300 text-gray-500 font-black uppercase tracking-[0.2em] text-[10px] py-6 rounded-3xl shadow-none cursor-not-allowed transition-all opacity-85"
                         >
-                            Orders Currently Paused
+                            Orders Temporarily Paused 🎉
                         </button>
                     </div>
 

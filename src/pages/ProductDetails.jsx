@@ -27,6 +27,8 @@ const normalizeVariantMrp = (variant, fallbackMrp = 0, resolvedBasePrice = 0) =>
     return Math.max(Number(fallbackMrp || 0), Number(resolvedBasePrice || 0));
 };
 
+import BranchNoticeModal from '../components/BranchNoticeModal';
+
 const ProductDetails = () => {
     const { id } = useParams(); // can be ObjectId or slug
     const [product, setProduct] = useState(null);
@@ -39,6 +41,7 @@ const ProductDetails = () => {
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedSize, setSelectedSize] = useState('');
     const [isZoomOpen, setIsZoomOpen] = useState(false);
+    const [isNoticeModalOpen, setIsNoticeModalOpen] = useState(false);
 
     const [bestsellers, setBestsellers] = useState([]);
     const [trending, setTrending] = useState([]);
@@ -116,12 +119,7 @@ const ProductDetails = () => {
     const currentSku = selectedVariant ? selectedVariant.sku : product.sku;
 
     const handleAddToCart = () => {
-        addToCart(product, 1, {
-            finalPrice: finalPrice,
-            originalMrp: mrp,
-            variant: selectedVariant ? { ...selectedVariant, size: selectedSize, color: selectedColor, sku: currentSku } : null
-        });
-        setAdded(true);
+        setIsNoticeModalOpen(true);
     };
 
     return (
@@ -493,6 +491,11 @@ const ProductDetails = () => {
                     </div>
                 </div>
             )}
+            {/* BRANCH NOTICE POPUP MODAL */}
+            <BranchNoticeModal
+                isOpen={isNoticeModalOpen}
+                onClose={() => setIsNoticeModalOpen(false)}
+            />
         </div>
     );
 };
